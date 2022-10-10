@@ -9,9 +9,14 @@ public class LevelController : MonoBehaviour
     
     private Rigidbody2D _rb;
     private bool _horizontalInput;
+    
+    private Vector2 _startPosition;
+
+    public Vector2 StartPosition => _startPosition;
 
     void Start()
     {
+        _startPosition = transform.position;
         _rb = GetComponent<Rigidbody2D>();
     }
 
