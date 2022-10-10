@@ -29,7 +29,6 @@ public class Coin : MonoBehaviour
             alive = false;
             scoreManager.setScore(coinValue);
             Destroy(this.gameObject);
-            Debug.Log("Player hit \n");
         }
     }
 
