@@ -14,8 +14,11 @@ public class PlayerController : MonoBehaviour
     private bool _verticalInput; // Jump
     private bool _isJumping;
     
+    private GameManager _gameManager;
+
     void Start()
     {
+        _gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         _rb = GetComponent<Rigidbody2D>();
     }
 
@@ -43,5 +46,13 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.8f, _groundMask);
         return hit.collider != null;
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.collider.CompareTag("Saw"))
+        {
+            _gameManager.ResetGame();
+        }
     }
 }
