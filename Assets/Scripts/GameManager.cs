@@ -9,10 +9,12 @@ public class GameManager : MonoBehaviour
     
     public TMPro.TextMeshProUGUI  scoreText;
     public static int score = 0;
+    private GameObject[] coins;
 
 
     private void Start()
     {
+        coins = GameObject.FindGameObjectsWithTag("Coin");
         scoreText.text = "Score: " + score;
     }
 
@@ -31,6 +33,10 @@ public class GameManager : MonoBehaviour
     {
         LevelController levelController = level.GetComponent<LevelController>();
         level.transform.position = levelController.StartPosition;
+        foreach (GameObject c in coins)
+        {
+            c.GetComponent<Coin>().ResetCoins();
+        }
         score = 0;
     }
 }

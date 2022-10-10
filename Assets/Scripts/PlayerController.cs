@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        GameOver();
         Jump();
     }
 
@@ -52,6 +53,15 @@ public class PlayerController : MonoBehaviour
     {
         if (col.collider.CompareTag("Saw"))
         {
+            _gameManager.ResetGame();
+        }
+    }
+
+    private void GameOver()
+    {
+        if(transform.position.y < -4.5)
+        {
+            transform.position = new Vector3(-2.5f, -2.25f, 0);
             _gameManager.ResetGame();
         }
     }
