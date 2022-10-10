@@ -9,12 +9,25 @@ public class LevelController : MonoBehaviour
     
     private Rigidbody2D _rb;
     private bool _horizontalInput;
+    private GameObject[] coin;
 
     void Start()
     {
+        coin = GameObject.FindGameObjectsWithTag("Coin");
         _rb = GetComponent<Rigidbody2D>();
     }
+    private void Update()
+    {
+        if(transform.position.x <=  -74)
+        {
+            transform.position = new Vector3(0, transform.position.y, transform.position.z);
+            foreach (GameObject c in coin)
+            {
+                c.GetComponent<Coin>().ResetCoins();
+            }
 
+        }
+    }
     private void FixedUpdate()
     {
         MoveHorizontally();

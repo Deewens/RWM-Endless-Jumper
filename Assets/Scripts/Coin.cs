@@ -28,7 +28,7 @@ public class Coin : MonoBehaviour
         {
             alive = false;
             scoreManager.setScore(coinValue);
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 
@@ -38,6 +38,10 @@ public class Coin : MonoBehaviour
         rb.velocity -= velocity;
     }
 
+    public void ResetCoins()
+    {
+        this.gameObject.SetActive(true);
+    }
 
 
 }
