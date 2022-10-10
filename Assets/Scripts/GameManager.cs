@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public TMPro.TextMeshProUGUI  scoreText;
     public static int score = 0;
     private GameObject[] coins;
+    private bool scoreDoubled = false;
 
 
     private void Start()
@@ -26,6 +27,11 @@ public class GameManager : MonoBehaviour
     public void setScore(int t_score)
     {
         score += t_score;
+
+        if (scoreDoubled)
+        {
+            score += t_score;
+        }
     }
 
     
@@ -39,4 +45,13 @@ public class GameManager : MonoBehaviour
         }
         score = 0;
     }
+    
+    public void DoubleScore()
+    {
+        scoreDoubled = !scoreDoubled;
+    }
+
+
+    
+        
 }
