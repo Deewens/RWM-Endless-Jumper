@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject level;
+    
     public TMPro.TextMeshProUGUI  scoreText;
     public static int score = 0;
 
@@ -24,4 +26,11 @@ public class GameManager : MonoBehaviour
         score += t_score;
     }
 
+    
+    public void ResetGame()
+    {
+        LevelController levelController = level.GetComponent<LevelController>();
+        level.transform.position = levelController.StartPosition;
+        score = 0;
+    }
 }
