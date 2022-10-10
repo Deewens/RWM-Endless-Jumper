@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public TMPro.TextMeshProUGUI  scoreText;
     public static int score = 0;
 
+
     private void Start()
     {
         scoreText.text = "Score: " + score;
