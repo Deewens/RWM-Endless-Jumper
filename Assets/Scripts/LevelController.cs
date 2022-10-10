@@ -10,10 +10,15 @@ public class LevelController : MonoBehaviour
     private Rigidbody2D _rb;
     private bool _horizontalInput;
     private GameObject[] coin;
+    
+    private Vector2 _startPosition;
+
+    public Vector2 StartPosition => _startPosition;
 
     void Start()
     {
         coin = GameObject.FindGameObjectsWithTag("Coin");
+        _startPosition = transform.position;
         _rb = GetComponent<Rigidbody2D>();
     }
     private void Update()
