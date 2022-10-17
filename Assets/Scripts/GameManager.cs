@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     {
         _startTime = Time.time;
         
-        //_dataManager = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
+        _dataManager = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
         
         coins = GameObject.FindGameObjectsWithTag("Coin");
         scoreText.text = "Score: " + score;
@@ -50,9 +50,9 @@ public class GameManager : MonoBehaviour
         _dieTime = Time.time;
 
         float storeTime = _dieTime - _startTime;
-        /*_dataManager.AddDeath();
+        _dataManager.AddDeath();
         _dataManager.UpdateHighestScore(score);
-        _dataManager.UpdateLongestTimePlayed(storeTime);*/
+        _dataManager.UpdateLongestTimePlayed(storeTime);
 
         score = 0;
         
