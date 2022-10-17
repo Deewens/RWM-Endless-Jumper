@@ -1,10 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    public float speed;
     public bool alive = true;
     private int coinValue; // the added score value for a coin
     private Rigidbody2D rb;
@@ -14,17 +14,14 @@ public class Coin : MonoBehaviour
     private void Awake()
     {
         scoreManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        
         rb = GetComponent<Rigidbody2D>();
         coinValue = 10;
     }
-    private void Update()
-    {
-        Move();
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Player"))
         {
             alive = false;
             scoreManager.setScore(coinValue);
@@ -32,16 +29,8 @@ public class Coin : MonoBehaviour
         }
     }
 
-    private void Move()
-    {
-        Vector2 velocity = new Vector2(speed, 0) * Time.deltaTime;
-        rb.velocity -= velocity;
-    }
-
     public void ResetCoins()
     {
         this.gameObject.SetActive(true);
     }
-
-
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5893694720033816855}
   - component: {fileID: 5893694720033816854}
-  - component: {fileID: 1513319236}
+  - component: {fileID: -6242064268262424523}
   m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1513319236
+--- !u!61 &-6242064268262424523
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,5 +109,5 @@ BoxCollider2D:
     adaptiveTiling: 1
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 15.8, y: 0.9}
   m_EdgeRadius: 0

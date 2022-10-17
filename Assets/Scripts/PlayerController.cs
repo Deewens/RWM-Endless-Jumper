@@ -8,31 +8,41 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float jumpForce;
     [SerializeField] private LayerMask _groundMask;
-    
+
     private Rigidbody2D _rb;
-    
+
     private bool _verticalInput; // Jump
     private bool _isJumping;
-    
+
     private GameManager _gameManager;
+
+    private Vector2 _rayPosition;
+    [SerializeField] private float rayDistance = 0.05f;
 
     void Start()
     {
         _gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         _rb = GetComponent<Rigidbody2D>();
+
+        _rayPosition = transform.position;
     }
 
     void Update()
     {
         GameOver();
         Jump();
+
+        _rayPosition = transform.position;
+        _rayPosition.y -= 0.5f;
+        _rayPosition.x -= 0.5f;
+        Debug.DrawRay(_rayPosition, Vector2.down * rayDistance, Color.yellow);
     }
 
     private void Jump()
     {
         if (!_verticalInput || !IsGrounded()) return;
 
-        _rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        _rb.velocity = Vector2.up * jumpForce;
     }
 
     private void OnMove(InputValue value)
@@ -45,18 +55,10 @@ public class PlayerController : MonoBehaviour
 
     private bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.8f, _groundMask);
+        RaycastHit2D hit = Physics2D.Raycast(_rayPosition, Vector2.down, rayDistance, _groundMask);
+        
         return hit.collider != null;
     }
-
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.collider.CompareTag("Saw"))
-        {
-            _gameManager.ResetGame();
-        }
-    }
-
     private void GameOver()
     {
         if(transform.position.y < -4.5)
