@@ -1,25 +1,29 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 
 public class LevelController : MonoBehaviour
 {
     [SerializeField] private float maxSpeed;
-    
-    private Rigidbody2D _rb;
-    private bool _horizontalInput;
-    private GameObject[] coin;
-    
+
+
     private Vector2 _startPosition;
 
     public Vector2 StartPosition => _startPosition;
+
+    private Rigidbody2D _rb;
+    private bool _horizontalInput;
+    private GameObject[] coin;
 
     void Start()
     {
         coin = GameObject.FindGameObjectsWithTag("Coin");
         _startPosition = transform.position;
         _rb = GetComponent<Rigidbody2D>();
+        
     }
     private void Update()
     {
@@ -40,8 +44,6 @@ public class LevelController : MonoBehaviour
 
     private void MoveHorizontally()
     {
-        //if (!_horizontalInput) return;
-        
         _rb.MovePosition((Vector2) transform.position + Vector2.left * (Time.deltaTime * maxSpeed));
     }
     
@@ -52,4 +54,5 @@ public class LevelController : MonoBehaviour
         if (input.x > 0) _horizontalInput = true;
         else _horizontalInput = false;
     }
+
 }

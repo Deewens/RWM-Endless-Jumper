@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
     {
         if(transform.position.y < -4.5)
         {
-            transform.position = new Vector3(-2.5f, -2.25f, 0);
+            transform.position = new Vector3(-4.5f, -2.4f, 0);
             _gameManager.ResetGame();
         }
     }
