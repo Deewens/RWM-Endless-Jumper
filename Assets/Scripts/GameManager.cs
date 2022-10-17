@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -37,15 +38,18 @@ public class GameManager : MonoBehaviour
     
     public void ResetGame()
     {
-        LevelController levelController = level.GetComponent<LevelController>();
-        level.transform.position = levelController.StartPosition;
-        foreach (GameObject c in coins)
-        {
-            c.GetComponent<Coin>().ResetCoins();
-        }
-        score = 0;
+        //LevelController levelController = level.GetComponent<LevelController>();
+        //level.transform.position = levelController.StartPosition;
+        //foreach (GameObject c in coins)
+        //{
+        //    c.GetComponent<Coin>().ResetCoins();
+        //}
+        //score = 0;
+
+        UnityEngine.SceneManagement.Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+
     }
-    
+
     public void DoubleScore()
     {
         scoreDoubled = !scoreDoubled;
