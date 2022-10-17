@@ -27,15 +27,15 @@ public class LevelController : MonoBehaviour
     }
     private void Update()
     {
-        if(transform.position.x <=  -74)
-        {
-            transform.position = new Vector3(0, transform.position.y, transform.position.z);
-            foreach (GameObject c in coin)
-            {
-                c.GetComponent<Coin>().ResetCoins();
-            }
+        //if(transform.position.x <=  -74)
+        //{
+        //    transform.position = new Vector3(0, transform.position.y, transform.position.z);
+        //    foreach (GameObject c in coin)
+        //    {
+        //        c.GetComponent<Coin>().ResetCoins();
+        //    }
 
-        }
+        //}
     }
     private void FixedUpdate()
     {

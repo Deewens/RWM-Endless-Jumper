@@ -8,7 +8,6 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private GameObject floor;
     [SerializeField] private GameObject saw;
     [SerializeField] private GameObject coin;
-    [SerializeField] private GameObject wall;
 
     float timeToSaw;
     float timeToCoin;
@@ -20,7 +19,6 @@ public class LevelGenerator : MonoBehaviour
     public Transform parentFloor;
     public Transform parentSaw;
     public Transform parentCoin;
-    public Transform parentWall;
 
     private void Awake()
     {
