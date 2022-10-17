@@ -4,7 +4,7 @@ namespace PowerUp
 {
     public interface IPowerUp
     {
-        PowerUpType Type { get; }
+        PowerUpType powerUpType { get; }
 
         /**
          * Instantiate a new PowerUp in the level
