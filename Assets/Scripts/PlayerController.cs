@@ -4,13 +4,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public enum PlayerAnimStates
+{
+    Idle = 0,
+    Running = 1,
+    Jumping = 2,
+}
+
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float jumpForce;
-    [SerializeField] private LayerMask _groundMask;
+    [SerializeField] private LayerMask groundMask;
+    
+    public PlayerAnimStates playerAnimState;
+    private static readonly int State = Animator.StringToHash("State");
 
+    private Animator _animator;
     private Rigidbody2D _rb;
-
+    private CapsuleCollider2D _capsuleCollider;
+    
     private bool _verticalInput; // Jump
     private bool _isJumping;
 
@@ -23,7 +35,9 @@ public class PlayerController : MonoBehaviour
     {
         _gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         _rb = GetComponent<Rigidbody2D>();
-
+        _capsuleCollider = GetComponent<CapsuleCollider2D>();
+        _animator = GetComponent<Animator>();
+        
         _rayPosition = transform.position;
     }
 
@@ -32,10 +46,20 @@ public class PlayerController : MonoBehaviour
         GameOver();
         Jump();
 
+        if (IsGrounded())
+        {
+            playerAnimState = PlayerAnimStates.Running;
+        }
+        else
+        {
+            playerAnimState = PlayerAnimStates.Jumping;
+        }
+        
         _rayPosition = transform.position;
-        _rayPosition.y -= 0.5f;
-        _rayPosition.x -= 0.5f;
-        Debug.DrawRay(_rayPosition, Vector2.down * rayDistance, Color.yellow);
+        /*_rayPosition.y -= 0.5f;
+        _rayPosition.x -= 0.5f;*/
+        Debug.DrawRay(_capsuleCollider.bounds.center, Vector2.down * rayDistance, Color.yellow);
+        _animator.SetInteger(State, (int)playerAnimState);
     }
 
     private void Jump()
@@ -55,9 +79,10 @@ public class PlayerController : MonoBehaviour
 
     private bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(_rayPosition, Vector2.down, rayDistance, _groundMask);
-        
-        return hit.collider != null;
+        RaycastHit2D raycastHit = Physics2D.BoxCast(_capsuleCollider.bounds.center, _capsuleCollider.bounds.size, 0,
+            Vector2.down, rayDistance, groundMask);
+
+        return raycastHit.collider != null;
     }
     private void GameOver()
     {
