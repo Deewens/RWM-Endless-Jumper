@@ -6,7 +6,6 @@ using UnityEngine;
 public class SawScript : MonoBehaviour
 {
     private GameManager _gameManager;
-    
     Transform axis;
     
     void Start()
@@ -20,9 +19,9 @@ public class SawScript : MonoBehaviour
         transform.RotateAround(axis.position, Vector3.forward, 1);
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (col.CompareTag("Player"))
+        if (collision.collider.CompareTag("Player"))
         {
             _gameManager.ResetGame();
         }
