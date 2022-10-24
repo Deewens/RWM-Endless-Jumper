@@ -7,6 +7,12 @@ TagManager:
   - Coin
   - Saw
   - DataManager
+  - Follower
+  - Shrapnel
+  - Bomb
+  - Ground
+  - Bomber
+  - GroundWanderer
   layers:
   - Default
   - TransparentFX
@@ -15,8 +21,8 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
-  - 
+  - Coin
+  - Saw
   - 
   - 
   - 

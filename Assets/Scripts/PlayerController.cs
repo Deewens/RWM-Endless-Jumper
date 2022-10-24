@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
     }
     private void GameOver()
     {
-        if(transform.position.y < -4.5)
+        if(transform.position.y < -3)
         {
             _gameManager.ResetGame();
         }
