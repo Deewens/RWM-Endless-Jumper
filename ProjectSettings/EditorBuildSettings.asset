@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 93e5665de70b28f479f3583360a1b330
   - enabled: 1
+    path: Assets/Scenes/DynamicCamera.unity
+    guid: 9658a5749c798f844953d33028472155
+  - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: f2a9fcec008f67b46bd0406c2d88fad5
   m_configObjects: {}

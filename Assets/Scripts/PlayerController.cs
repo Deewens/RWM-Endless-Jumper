@@ -23,10 +23,17 @@ public class PlayerController : MonoBehaviour
     private bool _verticalInput; // Jump
     private bool _isJumping;
 
+    public GameObject camera;
+
     private GameManager _gameManager;
 
     private Vector2 _rayPosition;
     [SerializeField] private float rayDistance = 0.05f;
+
+    private bool _isTraumaChanged = false;
+
+    private const float _maxTraumaValue = 0.4f;
+
 
     void Start()
     {
@@ -36,6 +43,9 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
         
         _rayPosition = transform.position;
+
+        camera.GetComponent<DynamicCameraController>().trauma = 0f;
+
     }
 
     void Update()
@@ -51,7 +61,21 @@ public class PlayerController : MonoBehaviour
         {
             playerAnimState = PlayerAnimStates.Jumping;
         }
-        
+
+
+        if (camera.GetComponent<DynamicCameraController>().trauma < _maxTraumaValue && _gameManager.GetScore() % 100 == 0 && !_isTraumaChanged)
+        {
+
+            camera.GetComponent<DynamicCameraController>().trauma += 0.05f;
+            _isTraumaChanged = true;
+        }
+
+
+        if (_gameManager.GetScore() % 100 != 0)
+        {
+            _isTraumaChanged = false;
+        }
+
         _rayPosition = transform.position;
         /*_rayPosition.y -= 0.5f;
         _rayPosition.x -= 0.5f;*/

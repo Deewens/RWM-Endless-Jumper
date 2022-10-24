@@ -41,6 +41,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public int GetScore()
+    {
+        return score;
+    }
+
     
     public void ResetGame()
     {
