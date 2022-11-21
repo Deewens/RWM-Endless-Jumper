@@ -16,7 +16,7 @@ public class Coin : MonoBehaviour
         scoreManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         
         rb = GetComponent<Rigidbody2D>();
-        coinValue = 10;
+        coinValue = 1;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
