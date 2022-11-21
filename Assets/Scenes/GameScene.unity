@@ -459,10 +459,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score: 1000'
+  m_text: 'score: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c8d477d1960492d44b4a305fe54a7544, type: 2}
+  m_sharedMaterial: {fileID: -8405700358053112251, guid: c8d477d1960492d44b4a305fe54a7544, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -553,7 +553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1710.61, y: 807.1}
+  m_AnchoredPosition: {x: -782, y: 489}
   m_SizeDelta: {x: 306.2, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &988400917
@@ -879,6 +879,64 @@ MonoBehaviour:
   parentFloor: {fileID: 988400918}
   parentSaw: {fileID: 689295235}
   parentCoin: {fileID: 461272360}
+--- !u!1 &1636222303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1636222305}
+  - component: {fileID: 1636222304}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1636222304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636222303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ec5a136720ce0489730b18895bc680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _UseGameOver: 1
+  _playerName: Player 1
+  _canvasPrefab: {fileID: 6342126261381459562, guid: 628babdbfe81e4e4387ec3b7acf67316, type: 3}
+  _gameOverText: game over
+  _EndScreenText: {fileID: 2768518502444809257, guid: 0c600bf2b9f5eb44da1c43315823cd33, type: 3}
+  _GameOverColour:
+    serializedVersion: 2
+    rgba: 4279374538
+  _useScoreCountUp: 1
+  _scoreGameObject: {fileID: 911875294}
+  _scoreText: 'score : '
+  _ScoreColour:
+    serializedVersion: 2
+    rgba: 4291019715
+--- !u!4 &1636222305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636222303}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 268.27805, y: 727.47406, z: -7.3743243}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1959562694
 PrefabInstance:
   m_ObjectHideFlags: 0

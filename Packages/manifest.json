@@ -11,6 +11,7 @@
     "com.unity.timeline": "1.6.4",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.7.8",
+    "ie.itcarlow.endlevel-effects": "https://github.com/Izabela-Zelek//EndLevel-Effects.git?path=/Packages/ie.itcarlow.endlevel-effects#v0.1.1",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
