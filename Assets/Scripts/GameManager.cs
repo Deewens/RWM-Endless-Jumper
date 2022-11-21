@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject level;
-
     private DataManager _dataManager;
     
     public TMPro.TextMeshProUGUI  scoreText;
@@ -25,12 +23,12 @@ public class GameManager : MonoBehaviour
         _dataManager = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
         
         coins = GameObject.FindGameObjectsWithTag("Coin");
-        scoreText.text = "Score: " + score;
+        scoreText.text = "score: " + score;
     }
 
     private void Update()
     {
-        scoreText.text = "Score: " + score;
+        scoreText.text = "score: " + score; 
     }
 
     public void setScore(int t_score)
@@ -55,15 +53,9 @@ public class GameManager : MonoBehaviour
         _dataManager.UpdateLongestTimePlayed(storeTime);
 
         score = 0;
-        
-        /*LevelController levelController = level.GetComponent<LevelController>();
-        level.transform.position = levelController.StartPosition;
-        foreach (GameObject c in coins)
-        {
-            c.GetComponent<Coin>().ResetCoins();
-        }*/
+
     }
-    
+
     public void DoubleScore()
     {
         scoreDoubled = !scoreDoubled;
