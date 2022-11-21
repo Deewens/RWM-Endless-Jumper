@@ -7,12 +7,9 @@ TagManager:
   - Coin
   - Saw
   - DataManager
-  - Follower
-  - Shrapnel
-  - Bomb
-  - Ground
-  - Bomber
-  - GroundWanderer
+  - TriggerBoxLeft
+  - CoinTriggerTut
+  - ChasingEnemy
   layers:
   - Default
   - TransparentFX
@@ -21,8 +18,8 @@ TagManager:
   - Water
   - UI
   - Ground
-  - Coin
-  - Saw
+  - 
+  - 
   - 
   - 
   - 

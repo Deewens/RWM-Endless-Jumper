@@ -12,9 +12,13 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float jumpForce;
     [SerializeField] private LayerMask groundMask;
-    
+    [SerializeField] private AudioSource runAudio;
+    [SerializeField] private AudioSource coinAudio;
+    private AudioSource jumpAudio;
     public PlayerAnimStates playerAnimState;
     private static readonly int State = Animator.StringToHash("State");
+
+    private PlayerDamageSystem _pds;
 
     private Animator _animator;
     private Rigidbody2D _rb;
@@ -30,11 +34,13 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        _pds = this.GetComponent<PlayerDamageSystem>();
         _gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         _rb = GetComponent<Rigidbody2D>();
         _capsuleCollider = GetComponent<CapsuleCollider2D>();
         _animator = GetComponent<Animator>();
-        
+        jumpAudio = GetComponent<AudioSource>();
+
         _rayPosition = transform.position;
     }
 
@@ -45,10 +51,18 @@ public class PlayerController : MonoBehaviour
 
         if (IsGrounded())
         {
+            if (!runAudio.isPlaying)
+            {
+                runAudio.Play();
+            }
             playerAnimState = PlayerAnimStates.Running;
         }
         else
         {
+            if (runAudio.isPlaying)
+            {
+                runAudio.Stop();
+            }
             playerAnimState = PlayerAnimStates.Jumping;
         }
         
@@ -63,7 +77,17 @@ public class PlayerController : MonoBehaviour
     {
         if (!_verticalInput || !IsGrounded()) return;
 
+        jumpAudio.Play();
         _rb.velocity = Vector2.up * jumpForce;
+    }
+
+    public void TouchJump()
+    {
+        if (!IsGrounded()) return;
+
+        jumpAudio.Play();
+        _rb.velocity = Vector2.up * jumpForce;
+        _verticalInput = false;
     }
 
     private void OnMove(InputValue value)
@@ -81,11 +105,21 @@ public class PlayerController : MonoBehaviour
 
         return raycastHit.collider != null;
     }
-    private void GameOver()
+
+    public void GameOver()
     {
-        if(transform.position.y < -3)
+        if (transform.position.y < -3)
         {
-            _gameManager.ResetGame();
+            _pds.SetDamage(2);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Coin"))
+        {
+            coinAudio.Play();
+        }
+
     }
 }

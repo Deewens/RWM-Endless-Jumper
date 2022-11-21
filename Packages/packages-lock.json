@@ -125,7 +125,7 @@
       }
     },
     "com.unity.ide.rider": {
-      "version": "3.0.15",
+      "version": "3.0.16",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -234,11 +234,26 @@
       },
       "url": "https://packages.unity.com"
     },
-    "ie.itcarlow.2d.platformer_enemy_behaviour": {
-      "version": "file:C:/Users/gameuser/Desktop/RWM_Platformer_Enemy_Behaviours-20221024T081954Z-001/RWM_Platformer_Enemy_Behaviours/Packages/ie.itcarlow.2d.platformer_enemy_behaviours",
+    "ie.setu.gesturemanager": {
+      "version": "https://github.com/CarolinePercy/P1-GestureManager.git",
       "depth": 0,
-      "source": "local",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "7e5374ae4d1e4626096b1b0c95d5081bc41f46b0"
+    },
+    "ie.itcarlow.endlevel-effects": {
+      "version": "https://github.com/Izabela-Zelek//EndLevel-Effects.git?path=/Packages/ie.itcarlow.endlevel-effects#v0.1.4",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "1c5bfdb134b1adab10757d23b83893d24fc30695"
+    },
+    "ie.itcarlow.tutorialsystem": {
+      "version": "https://github.com/DawidJerdonek/RWM_P1.git?path=/Packages/ie.itcarlow.tutorialsystem#v0.2.2",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b8e53da6aa47410f05b95013bfcf3ddb7b632785"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

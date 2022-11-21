@@ -13,6 +13,9 @@ public class LevelGenerator : MonoBehaviour
     float timeToCoin;
     GameObject lastFloor;
 
+    float minTime = 1;
+    float currentTime = 5;
+
     float lastFloorPos;
     Vector3 prevPos = new Vector3(-9.1f, -3.42f, 0.0f);
 
@@ -68,13 +71,13 @@ public class LevelGenerator : MonoBehaviour
         {
             flooring = Instantiate(floor, parentFloor);
             flooring.transform.localPosition = prevPos;
-            prevPos = prevPos + new Vector3(floor.GetComponent<SpriteRenderer>().size.x - 1, 0, 0);
+            prevPos = prevPos + new Vector3(floor.GetComponent<SpriteRenderer>().size.x - 0.1f, 0, 0);
 
         }
 
         float spaceCount = UnityEngine.Random.Range(0.5f, 1.5f);
         //float logItBitch = ;
-        prevPos = prevPos + new Vector3(floor.GetComponent<SpriteRenderer>().size.x - 1, 0, 0);
+        prevPos = prevPos + new Vector3(floor.GetComponent<SpriteRenderer>().size.x, 0, 0);
 
         lastFloor = flooring;
     }
@@ -86,9 +89,14 @@ public class LevelGenerator : MonoBehaviour
 
         sawTemp = Instantiate(saw, parentSaw);
         sawTemp.transform.localPosition = new Vector3(prevPos.x, sawTemp.transform.localPosition.y, 0);
-        sawTemp.transform.localPosition += new Vector3(UnityEngine.Random.Range(-1.0f, 2.0f), 0, 0);
+        sawTemp.transform.localPosition += new Vector3(UnityEngine.Random.Range(2.0f, 5.0f), 0, 0);
 
-        timeToSaw = UnityEngine.Random.Range(5.0f, 10.0f);
+        timeToSaw = UnityEngine.Random.Range(currentTime, currentTime + minTime);
+
+        if (currentTime > minTime)
+        {
+            currentTime -= 0.4f;
+        }
     }
 
     private void RandomCoin()
