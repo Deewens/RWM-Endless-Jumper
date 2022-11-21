@@ -23,12 +23,12 @@ public class GameManager : MonoBehaviour
         _dataManager = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
         
         coins = GameObject.FindGameObjectsWithTag("Coin");
-        scoreText.text = "Score: " + score;
+        scoreText.text = "score: " + score;
     }
 
     private void Update()
     {
-        scoreText.text = "Score: " + score; 
+        scoreText.text = "score: " + score; 
     }
 
     public void setScore(int t_score)
