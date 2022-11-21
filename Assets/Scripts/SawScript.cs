@@ -24,7 +24,7 @@ public class SawScript : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            _gameManager.ResetGame();
+            Destroy(col.gameObject);
         }
     }
 }

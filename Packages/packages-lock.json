@@ -234,6 +234,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "ie.itcarlow.endlevel-effects": {
+      "version": "https://github.com/Izabela-Zelek//EndLevel-Effects.git?path=/Packages/ie.itcarlow.endlevel-effects#v0.1.1",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ac4225049757b4356641c71754a302e5cfac0b17"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,

@@ -6,18 +6,22 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject level;
-
     private DataManager _dataManager;
     
     public TMPro.TextMeshProUGUI  scoreText;
+    public TMPro.TextMeshProUGUI replayText;
     public static int score = 0;
     private GameObject[] coins;
     private bool scoreDoubled = false;
 
     private float _startTime;
     private float _dieTime;
-    
+
+    private void Awake()
+    {
+        replayText.gameObject.SetActive(false);
+
+    }
     private void Start()
     {
         _startTime = Time.time;
@@ -25,12 +29,22 @@ public class GameManager : MonoBehaviour
         _dataManager = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();
         
         coins = GameObject.FindGameObjectsWithTag("Coin");
-        scoreText.text = "Score: " + score;
+        scoreText.text = "score: " + score;
+        replayText.gameObject.SetActive(false);
     }
 
     private void Update()
     {
-        scoreText.text = "Score: " + score;
+        scoreText.text = "score: " + score; 
+
+        if(Time.timeScale == 0)
+        {
+            replayText.gameObject.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.R))
+            { 
+                ResetGame(); 
+            }
+        }
     }
 
     public void setScore(int t_score)
@@ -46,6 +60,7 @@ public class GameManager : MonoBehaviour
     
     public void ResetGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
         _dieTime = Time.time;
 
@@ -55,15 +70,9 @@ public class GameManager : MonoBehaviour
         _dataManager.UpdateLongestTimePlayed(storeTime);
 
         score = 0;
-        
-        /*LevelController levelController = level.GetComponent<LevelController>();
-        level.transform.position = levelController.StartPosition;
-        foreach (GameObject c in coins)
-        {
-            c.GetComponent<Coin>().ResetCoins();
-        }*/
+
     }
-    
+
     public void DoubleScore()
     {
         scoreDoubled = !scoreDoubled;
@@ -75,4 +84,6 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2);
         scoreDoubled = false;
     }
+    
+        
 }
