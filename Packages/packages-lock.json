@@ -241,6 +241,13 @@
       "dependencies": {},
       "hash": "ac4225049757b4356641c71754a302e5cfac0b17"
     },
+    "ie.itcarlow.tutorialsystem": {
+      "version": "https://github.com/DawidJerdonek/RWM_P1.git?path=/Packages/ie.itcarlow.tutorialsystem#v0.2.2",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b8e53da6aa47410f05b95013bfcf3ddb7b632785"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
