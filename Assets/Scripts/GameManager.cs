@@ -9,13 +9,19 @@ public class GameManager : MonoBehaviour
     private DataManager _dataManager;
     
     public TMPro.TextMeshProUGUI  scoreText;
+    public TMPro.TextMeshProUGUI replayText;
     public static int score = 0;
     private GameObject[] coins;
     private bool scoreDoubled = false;
 
     private float _startTime;
     private float _dieTime;
-    
+
+    private void Awake()
+    {
+        replayText.gameObject.SetActive(false);
+
+    }
     private void Start()
     {
         _startTime = Time.time;
@@ -24,11 +30,21 @@ public class GameManager : MonoBehaviour
         
         coins = GameObject.FindGameObjectsWithTag("Coin");
         scoreText.text = "score: " + score;
+        replayText.gameObject.SetActive(false);
     }
 
     private void Update()
     {
         scoreText.text = "score: " + score; 
+
+        if(Time.timeScale == 0)
+        {
+            replayText.gameObject.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.R))
+            { 
+                ResetGame(); 
+            }
+        }
     }
 
     public void setScore(int t_score)
@@ -44,6 +60,7 @@ public class GameManager : MonoBehaviour
     
     public void ResetGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
         _dieTime = Time.time;
 
