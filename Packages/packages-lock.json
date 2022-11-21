@@ -234,6 +234,12 @@
       },
       "url": "https://packages.unity.com"
     },
+    "ie.itcarlow.2d.platformer_enemy_behaviour": {
+      "version": "file:C:/Users/gameuser/Desktop/RWM_Platformer_Enemy_Behaviours-20221024T081954Z-001/RWM_Platformer_Enemy_Behaviours/Packages/ie.itcarlow.2d.platformer_enemy_behaviours",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
