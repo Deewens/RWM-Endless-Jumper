@@ -9,9 +9,11 @@ public class LevelController : MonoBehaviour
     
     private Rigidbody2D _rb;
     private bool _horizontalInput;
+    private GameObject[] coin;
 
     void Start()
     {
+        coin = GameObject.FindGameObjectsWithTag("Coin");
         _rb = GetComponent<Rigidbody2D>();
     }
 
