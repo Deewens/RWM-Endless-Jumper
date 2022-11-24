@@ -5,12 +5,16 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject level;
+    
     public TMPro.TextMeshProUGUI  scoreText;
     public static int score = 0;
+    private GameObject[] coins;
 
 
     private void Start()
     {
+        coins = GameObject.FindGameObjectsWithTag("Coin");
         scoreText.text = "Score: " + score;
     }
 
@@ -24,4 +28,15 @@ public class GameManager : MonoBehaviour
         score += t_score;
     }
 
+    
+    public void ResetGame()
+    {
+        LevelController levelController = level.GetComponent<LevelController>();
+        level.transform.position = levelController.StartPosition;
+        foreach (GameObject c in coins)
+        {
+            c.GetComponent<Coin>().ResetCoins();
+        }
+        score = 0;
+    }
 }
