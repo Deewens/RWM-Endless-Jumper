@@ -7,12 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI  scoreText;
     public static int score = 0;
-    [SerializeField]
-    private CoinSpawner spawner;
 
     private void Start()
     {
-        spawner.BeginSpawn();
         scoreText.text = "Score: " + score;
     }
 

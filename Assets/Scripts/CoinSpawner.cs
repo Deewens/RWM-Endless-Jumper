@@ -25,13 +25,11 @@ public class CoinSpawner : MonoBehaviour
         GameObject coin;
         coin = Instantiate(coins);
 
-        Debug.Log("Hit");
         coin.SetActive(true);
-        float xPos = Random.Range(-8.0f, 8.0f);
 
-        // Spawn asteroid just above top of screen at a random point along x-axis
+        // Spawn asteroid HARD CODED FOR NOW as screen boundaries are volatile at this early stege
+        // Will need updating!!!!
         coin.transform.position = new Vector3(8, -3, 0);
-
 
         return coin;
     }
