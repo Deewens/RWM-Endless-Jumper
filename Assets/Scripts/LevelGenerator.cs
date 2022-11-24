@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,13 +6,19 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject floor;
+    [SerializeField] private GameObject saw;
+    [SerializeField] private GameObject coin;
 
+    float timeToSaw;
+    float timeToCoin;
     GameObject lastFloor;
 
     float lastFloorPos;
     Vector3 prevPos = new Vector3(-9.1f, -3.42f, 0.0f);
 
     public Transform parentFloor;
+    public Transform parentSaw;
+    public Transform parentCoin;
 
     private void Awake()
     {
@@ -20,14 +27,24 @@ public class LevelGenerator : MonoBehaviour
 
     private void Update()
     {
-        lastFloorPos = lastFloor.transform.position.x+ lastFloor.GetComponent<SpriteRenderer>().size.x / 2.0f;
+        timeToSaw -= Time.deltaTime;
+        timeToCoin -= Time.deltaTime;
+        lastFloorPos = lastFloor.transform.position.x + lastFloor.GetComponent<SpriteRenderer>().size.x / 2.0f;
 
         if (lastFloorPos < Camera.main.orthographicSize * 2)
         {
-            //prevPos = new Vector3(13f, -3.42f, 0.0f);
             RandomFloor();
             lastFloorPos = lastFloor.transform.position.x + lastFloor.GetComponent<SpriteRenderer>().size.x / 2.0f;
+        }
 
+        if (timeToSaw <= 0)
+        {
+            RandomSaw();
+        }
+
+        if (timeToCoin <= 0)
+        {
+            RandomCoin();
         }
     }
 
@@ -39,13 +56,12 @@ public class LevelGenerator : MonoBehaviour
         {
             RandomFloor();
             lastFloorPos = lastFloor.transform.position.x + lastFloor.GetComponent<SpriteRenderer>().size.x / 2.0f;
-
         }
     }
 
     private void RandomFloor()
     {
-        int floorCount = UnityEngine.Random.Range(2, 4);
+        int floorCount = UnityEngine.Random.Range(3, 5);
         GameObject flooring = null;
 
         for (int i = 0; i < floorCount; i++)
@@ -61,5 +77,33 @@ public class LevelGenerator : MonoBehaviour
         prevPos = prevPos + new Vector3(floor.GetComponent<SpriteRenderer>().size.x, 0, 0);
 
         lastFloor = flooring;
+    }
+
+    private void RandomSaw()
+    {
+        GameObject sawTemp = null;
+        Vector3 coinPos = prevPos;
+
+        sawTemp = Instantiate(saw, parentSaw);
+        sawTemp.transform.localPosition = new Vector3(prevPos.x, sawTemp.transform.localPosition.y, 0);
+        sawTemp.transform.localPosition += new Vector3(UnityEngine.Random.Range(2.0f, 5.0f), 0, 0);
+
+        timeToSaw = UnityEngine.Random.Range(5.0f, 10.0f);
+    }
+
+    private void RandomCoin()
+    {
+        GameObject coinTemp = null;
+        int coinCount = UnityEngine.Random.Range(3, 6);
+        Vector3 coinPos = prevPos;
+
+        for (int i = 0; i < coinCount; i++)
+        {
+            coinTemp = Instantiate(coin, parentCoin);
+            coinTemp.transform.localPosition = new Vector3(prevPos.x, coinTemp.transform.localPosition.y, 0);
+            coinTemp.transform.localPosition += new Vector3(-2 * i + (4 * coinCount), 0, 0);
+        }
+
+        timeToCoin = UnityEngine.Random.Range(2.0f, 5.0f);
     }
 }
