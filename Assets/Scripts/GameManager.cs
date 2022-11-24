@@ -49,9 +49,12 @@ public class GameManager : MonoBehaviour
     public void DoubleScore()
     {
         scoreDoubled = !scoreDoubled;
+        StartCoroutine(HandleDoubleScore());
     }
 
-
-    
-        
+    IEnumerator HandleDoubleScore()
+    {
+        yield return new WaitForSeconds(2);
+        scoreDoubled = false;
+    }
 }
