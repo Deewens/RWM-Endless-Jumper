@@ -11,8 +11,11 @@ public class DataManager : MonoBehaviour
 
     public float LongestTimePlayed => _longestTimePlayed;
 
+    public int TotalDeaths => _totalDeaths;
+
     private int _highestScore = 0;
     private float _longestTimePlayed = 0f;
+    private int _totalDeaths = 0;
 
     private void Awake() 
     { 
@@ -25,6 +28,7 @@ public class DataManager : MonoBehaviour
         {
             _highestScore = 0;
             _longestTimePlayed = 0f;
+            _totalDeaths = 0;
             
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -45,5 +49,10 @@ public class DataManager : MonoBehaviour
     {
         if (time > LongestTimePlayed)
             _longestTimePlayed = time;
+    }
+
+    public void AddDeath()
+    {
+        _totalDeaths = TotalDeaths + 1;
     }
 }
