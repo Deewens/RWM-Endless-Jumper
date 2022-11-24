@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
 
         float storeTime = _dieTime - _startTime;
         _dataManager.UpdateHighestScore(score);
+        _dataManager.UpdateLongestTimePlayed(storeTime);
 
         score = 0;
         
