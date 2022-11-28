@@ -37,7 +37,7 @@ public class ChasingEnemy : MonoBehaviour
             StartCoroutine(LerpPosition(_stablePosition, 5));
         }
     }
-    
+
     IEnumerator LerpPosition(Vector2 targetPosition, float duration)
     {
         float time = 0;
@@ -47,14 +47,6 @@ public class ChasingEnemy : MonoBehaviour
             transform.position = Vector2.Lerp(startPosition, targetPosition, time / duration);
             time += Time.deltaTime;
             yield return null;
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.CompareTag("Player"))
-        {
-            _pds.SetDamage(1);
         }
     }
 }
