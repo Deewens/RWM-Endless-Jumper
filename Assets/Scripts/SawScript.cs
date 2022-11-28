@@ -24,7 +24,11 @@ public class SawScript : MonoBehaviour
     {
         if (col.CompareTag("Player") || col.CompareTag("Coin"))
         {
-            Destroy(col.gameObject);
+            PlayerDamageSystem damageSystem = col.GetComponent<PlayerDamageSystem>();
+            if (damageSystem != null)
+            {
+                damageSystem.SetDamage(1);
+            }
         }
     }
 }

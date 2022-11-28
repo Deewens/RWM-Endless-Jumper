@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    private PlayerDamageSystem _playerDamageSystem;
     private DataManager _dataManager;
     
     public TMPro.TextMeshProUGUI  scoreText;
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        _playerDamageSystem = GameObject.FindWithTag("Player").GetComponent<PlayerDamageSystem>();
         _startTime = Time.time;
         
         _dataManager = GameObject.FindGameObjectWithTag("DataManager").GetComponent<DataManager>();

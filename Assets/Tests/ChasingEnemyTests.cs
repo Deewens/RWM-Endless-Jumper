@@ -42,7 +42,7 @@ public class ChasingEnemyTests
         var initialEnemyPosition = _chasingEnemy.transform.position;
         var playerPosition = _player.transform.position;
 
-        var offset = _chasingEnemy.OffsetFromPlayer;
+        var offset = _chasingEnemy.OffsetFromPlayerStable;
 
         Assert.Equals(initialEnemyPosition.x, playerPosition.x - offset);
         

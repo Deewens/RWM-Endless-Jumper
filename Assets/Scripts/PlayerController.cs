@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public PlayerAnimStates playerAnimState;
     private static readonly int State = Animator.StringToHash("State");
 
+    private PlayerDamageSystem _pds;
+
     private Animator _animator;
     private Rigidbody2D _rb;
     private CapsuleCollider2D _capsuleCollider;
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        _pds = this.GetComponent<PlayerDamageSystem>();
         _gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         _rb = GetComponent<Rigidbody2D>();
         _capsuleCollider = GetComponent<CapsuleCollider2D>();
@@ -81,11 +84,12 @@ public class PlayerController : MonoBehaviour
 
         return raycastHit.collider != null;
     }
-    private void GameOver()
+
+    public void GameOver()
     {
-        if(transform.position.y < -3)
+        if (transform.position.y < -3)
         {
-            Destroy(gameObject);
+            _pds.SetDamage(2);
         }
     }
 }
