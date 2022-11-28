@@ -9,6 +9,7 @@ TagManager:
   - DataManager
   - TriggerBoxLeft
   - CoinTriggerTut
+  - ChasingEnemy
   layers:
   - Default
   - TransparentFX

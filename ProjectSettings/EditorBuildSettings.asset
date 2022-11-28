@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 93e5665de70b28f479f3583360a1b330
+  - enabled: 1
+    path: Assets/Scenes/ChasingEnemyScene.unity
+    guid: 0f3db892c03f8124b86ffb454f479074
   m_configObjects: {}
