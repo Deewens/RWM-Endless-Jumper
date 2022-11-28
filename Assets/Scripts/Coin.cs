@@ -17,6 +17,23 @@ public class Coin : MonoBehaviour
         
         rb = GetComponent<Rigidbody2D>();
         coinValue = 1;
+
+    }
+    
+    private void Update()
+    {
+        Physics2D.queriesStartInColliders = false;
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 10);
+
+        if (hit.collider == null && GetComponent<Renderer>().isVisible)
+        {
+                Destroy(gameObject);
+        }
+        Debug.DrawRay(transform.position,-Vector2.up  * 10, Color.black);
+
+        Physics2D.queriesStartInColliders = true;
+
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -26,6 +43,10 @@ public class Coin : MonoBehaviour
             alive = false;
             scoreManager.setScore(coinValue);
             this.gameObject.SetActive(false);
+        }
+        else if (col.tag == "Coin")
+        {
+            Destroy(gameObject);
         }
     }
 
