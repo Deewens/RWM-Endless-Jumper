@@ -20,8 +20,7 @@ public class SawScript : MonoBehaviour
 
     void Update()
     {
-        transform.RotateAround(axis.position, Vector3.forward, 1);
-        
+        //transform.RotateAround(axis.position, Vector3.forward, 1);
     }
 
     private void OnTriggerEnter2D(Collider2D col)

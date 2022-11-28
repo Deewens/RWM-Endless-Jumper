@@ -68,7 +68,7 @@ public class LevelGenerator : MonoBehaviour
         {
             flooring = Instantiate(floor, parentFloor);
             flooring.transform.localPosition = prevPos;
-            prevPos = prevPos + new Vector3(floor.GetComponent<SpriteRenderer>().size.x, 0, 0);
+            prevPos = prevPos + new Vector3(floor.GetComponent<SpriteRenderer>().size.x - 0.1f, 0, 0);
 
         }
 
