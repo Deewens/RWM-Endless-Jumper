@@ -14,7 +14,6 @@ public class Coin : MonoBehaviour
     private void Awake()
     {
         scoreManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-        
         rb = GetComponent<Rigidbody2D>();
         coinValue = 1;
 
