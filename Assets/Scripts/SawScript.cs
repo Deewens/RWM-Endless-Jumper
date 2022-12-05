@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SawScript : MonoBehaviour
 {
+    public ParticleSystem blood;
+    private ParticleSystem currentParticle;
     private GameManager _gameManager;
     private AudioSource _hurt;
     private Collider2D m_col;
@@ -28,6 +30,7 @@ public class SawScript : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
+            currentParticle = Instantiate(blood, col.gameObject.transform.position,Quaternion.identity,col.gameObject.transform);
             _hurt.Play();
             PlayerDamageSystem damageSystem = col.GetComponent<PlayerDamageSystem>();
             if (damageSystem != null)

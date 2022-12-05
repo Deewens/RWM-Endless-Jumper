@@ -2,20 +2,24 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 
 public class Coin : MonoBehaviour
 {
     public bool alive = true;
     private int coinValue; // the added score value for a coin
     private Rigidbody2D rb;
-
+    private ParticleSystem pickUpFlair;
     private GameManager scoreManager;
+    bool hasPlayed = false;
 
     private void Awake()
     {
         scoreManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         rb = GetComponent<Rigidbody2D>();
         coinValue = 1;
+
+        pickUpFlair = transform.Find("Mush Particle System").GetComponent<ParticleSystem>();
 
     }
     
@@ -33,6 +37,10 @@ public class Coin : MonoBehaviour
 
         Physics2D.queriesStartInColliders = true;
 
+        if (pickUpFlair.isStopped && hasPlayed)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -41,7 +49,11 @@ public class Coin : MonoBehaviour
         {
             alive = false;
             scoreManager.setScore(coinValue);
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
+
+            GetComponent<SpriteRenderer>().enabled = false;
+            pickUpFlair.Play();
+            hasPlayed = true;
         }
         else if (col.tag == "Coin")
         {
