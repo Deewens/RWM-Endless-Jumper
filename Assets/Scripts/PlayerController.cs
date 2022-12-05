@@ -12,7 +12,9 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float jumpForce;
     [SerializeField] private LayerMask groundMask;
-    
+    [SerializeField] private AudioSource runAudio;
+    [SerializeField] private AudioSource coinAudio;
+    private AudioSource jumpAudio;
     public PlayerAnimStates playerAnimState;
     private static readonly int State = Animator.StringToHash("State");
 
@@ -37,7 +39,8 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _capsuleCollider = GetComponent<CapsuleCollider2D>();
         _animator = GetComponent<Animator>();
-        
+        jumpAudio = GetComponent<AudioSource>();
+
         _rayPosition = transform.position;
     }
 
@@ -48,10 +51,18 @@ public class PlayerController : MonoBehaviour
 
         if (IsGrounded())
         {
+            if (!runAudio.isPlaying)
+            {
+                runAudio.Play();
+            }
             playerAnimState = PlayerAnimStates.Running;
         }
         else
         {
+            if (runAudio.isPlaying)
+            {
+                runAudio.Stop();
+            }
             playerAnimState = PlayerAnimStates.Jumping;
         }
         
@@ -66,6 +77,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!_verticalInput || !IsGrounded()) return;
 
+        jumpAudio.Play();
         _rb.velocity = Vector2.up * jumpForce;
     }
 
@@ -91,5 +103,14 @@ public class PlayerController : MonoBehaviour
         {
             _pds.SetDamage(2);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Coin"))
+        {
+            coinAudio.Play();
+        }
+
     }
 }

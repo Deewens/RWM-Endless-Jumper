@@ -6,7 +6,7 @@ using UnityEngine;
 public class SawScript : MonoBehaviour
 {
     private GameManager _gameManager;
-
+    private AudioSource _hurt;
     private Collider2D m_col;
     
     Transform axis;
@@ -16,6 +16,7 @@ public class SawScript : MonoBehaviour
         m_col = GetComponent<Collider2D>();
         _gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         axis = transform.GetChild(0);
+        _hurt = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -25,8 +26,9 @@ public class SawScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Player") || col.CompareTag("Coin"))
+        if (col.CompareTag("Player"))
         {
+            _hurt.Play();
             PlayerDamageSystem damageSystem = col.GetComponent<PlayerDamageSystem>();
             if (damageSystem != null)
             {
