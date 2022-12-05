@@ -61,4 +61,9 @@ public class ChasingEnemy : MonoBehaviour
             yield return null;
         }
     }
+
+    public int GetDuration()
+    {
+        return _duration;
+    }
 }
