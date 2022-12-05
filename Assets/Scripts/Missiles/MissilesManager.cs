@@ -9,6 +9,9 @@ namespace Missiles
     {
         [SerializeField] private float minTimeBeforeSpawn;
         [SerializeField] private float maxTimeBeforeSpawn;
+
+        [SerializeField] private float maxYPosSpawn;
+        [SerializeField] private float minYPosSpawn;
         
         [SerializeField] private GameObject missilePrefab;
         [SerializeField] private Transform missileSpawnPoint;
@@ -22,7 +25,11 @@ namespace Missiles
         {
             while (true)
             {
-                Instantiate(missilePrefab, missileSpawnPoint);
+                float spawnHeight = Random.Range(minYPosSpawn, maxYPosSpawn);
+                Vector2 spawnPosition = new Vector2(missileSpawnPoint.position.x, spawnHeight);
+                
+                GameObject spawnedMissile = Instantiate(missilePrefab, spawnPosition, Quaternion.identity);
+                spawnedMissile.transform.SetParent(missileSpawnPoint);
 
                 float timeBeforeSpawn = Random.Range(minTimeBeforeSpawn, maxTimeBeforeSpawn);
                 yield return new WaitForSeconds(timeBeforeSpawn);

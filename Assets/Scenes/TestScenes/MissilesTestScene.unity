@@ -744,6 +744,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minTimeBeforeSpawn: 5
   maxTimeBeforeSpawn: 10
+  maxYPosSpawn: 1
+  minYPosSpawn: -1
   missilePrefab: {fileID: 1815918567770103053, guid: 89e74172457efb64a8b32f11fabb8997, type: 3}
   missileSpawnPoint: {fileID: 364446733}
 --- !u!1001 &1276839792
