@@ -7,7 +7,9 @@ using UnityEngine.InputSystem;
 
 public class LevelController : MonoBehaviour
 {
-    [SerializeField] private float maxSpeed;
+    private const float maxSpeed = 10;
+
+    private float currentSpeed = 4;
 
 
     private Vector2 _startPosition;
@@ -17,6 +19,8 @@ public class LevelController : MonoBehaviour
     private Rigidbody2D _rb;
     private bool _horizontalInput;
     private GameObject[] coin;
+    private float timePassed = 0;
+    private float nextTimeToPass = 5;
 
     void Start()
     {
@@ -27,15 +31,16 @@ public class LevelController : MonoBehaviour
     }
     private void Update()
     {
-        //if(transform.position.x <=  -74)
-        //{
-        //    transform.position = new Vector3(0, transform.position.y, transform.position.z);
-        //    foreach (GameObject c in coin)
-        //    {
-        //        c.GetComponent<Coin>().ResetCoins();
-        //    }
+        timePassed += Time.deltaTime;
 
-        //}
+        if (currentSpeed < maxSpeed)
+        {
+            if (timePassed > nextTimeToPass)
+            {
+                nextTimeToPass *= 1.5f;
+                currentSpeed += 0.5f;
+            }
+        }
     }
     private void FixedUpdate()
     {
@@ -44,7 +49,7 @@ public class LevelController : MonoBehaviour
 
     private void MoveHorizontally()
     {
-        _rb.MovePosition((Vector2) transform.position + Vector2.left * (Time.deltaTime * maxSpeed));
+        _rb.MovePosition((Vector2) transform.position + Vector2.left * (Time.deltaTime * currentSpeed));
     }
     
     private void OnMove(InputValue value)
