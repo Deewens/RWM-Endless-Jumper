@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "com.esotericsoftware.spine.spine-csharp": "https://github.com/EsotericSoftware/spine-runtimes.git?path=spine-csharp/src#4.1",
+    "com.esotericsoftware.spine.spine-unity": "https://github.com/EsotericSoftware/spine-runtimes.git?path=spine-unity/Assets/Spine#4.1",
     "com.unity.collab-proxy": "1.17.2",
     "com.unity.feature.2d": "1.0.0",
     "com.unity.ide.rider": "3.0.16",
@@ -11,9 +13,9 @@
     "com.unity.timeline": "1.6.4",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.7.8",
-    "ie.setu.gesturemanager": "https://github.com/CarolinePercy/P1-GestureManager.git",
     "ie.itcarlow.endlevel-effects": "https://github.com/Izabela-Zelek//EndLevel-Effects.git?path=/Packages/ie.itcarlow.endlevel-effects#v0.1.5",
     "ie.itcarlow.tutorialsystem": "https://github.com/DawidJerdonek/RWM_P1.git?path=/Packages/ie.itcarlow.tutorialsystem#v0.2.2",
+    "ie.setu.gesturemanager": "https://github.com/CarolinePercy/P1-GestureManager.git",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",

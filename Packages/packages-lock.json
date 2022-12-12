@@ -1,5 +1,21 @@
 {
   "dependencies": {
+    "com.esotericsoftware.spine.spine-csharp": {
+      "version": "https://github.com/EsotericSoftware/spine-runtimes.git?path=spine-csharp/src#4.1",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "a3e84eef16bef5439441838a92fac5726cfff26f"
+    },
+    "com.esotericsoftware.spine.spine-unity": {
+      "version": "https://github.com/EsotericSoftware/spine-runtimes.git?path=spine-unity/Assets/Spine#4.1",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.esotericsoftware.spine.spine-csharp": "4.1.0"
+      },
+      "hash": "a3e84eef16bef5439441838a92fac5726cfff26f"
+    },
     "com.unity.2d.animation": {
       "version": "7.0.6",
       "depth": 1,
@@ -234,13 +250,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "ie.setu.gesturemanager": {
-      "version": "https://github.com/CarolinePercy/P1-GestureManager.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "7e5374ae4d1e4626096b1b0c95d5081bc41f46b0"
-    },
     "ie.itcarlow.endlevel-effects": {
       "version": "https://github.com/Izabela-Zelek//EndLevel-Effects.git?path=/Packages/ie.itcarlow.endlevel-effects#v0.1.5",
       "depth": 0,
@@ -254,6 +263,13 @@
       "source": "git",
       "dependencies": {},
       "hash": "b8e53da6aa47410f05b95013bfcf3ddb7b632785"
+    },
+    "ie.setu.gesturemanager": {
+      "version": "https://github.com/CarolinePercy/P1-GestureManager.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "7e5374ae4d1e4626096b1b0c95d5081bc41f46b0"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
