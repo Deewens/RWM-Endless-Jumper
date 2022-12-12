@@ -564,15 +564,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 54
+  m_fontSizeBase: 54
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 1024
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -600,7 +600,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 1.3466187, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -629,10 +629,10 @@ RectTransform:
   m_Father: {fileID: 1552847079}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 393.10828, y: -83.694336}
-  m_SizeDelta: {x: 786.2165, y: 167.3887}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -734.66144, y: 470}
+  m_SizeDelta: {x: 400.8771, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &988400917
 GameObject:
@@ -727,7 +727,7 @@ MonoBehaviour:
   minYPosSpawn: -2.75
   maxYPosSpawn: 0
   missilePrefab: {fileID: 1815918567770103053, guid: 89e74172457efb64a8b32f11fabb8997, type: 3}
-  missileSpawnPoint: {fileID: 1418408808}
+  missileSpawnPoint: {fileID: 1788428742}
   warningSignPrefab: {fileID: 5859521112941707718, guid: f71cfc1a2b6d48446bae57798989bec9, type: 3}
   difficultyChangeRate: 20
   timesBeforeSpawn:
@@ -911,19 +911,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1276839801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 660152799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e4c782422068bb41a600342ea0ebea4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerDamage: 0
 --- !u!1 &1401205811
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,10 +944,10 @@ RectTransform:
   m_Father: {fileID: 1552847079}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -439.02368, y: -57.28174}
-  m_SizeDelta: {x: 878.04736, y: 114.56348}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 234, y: 470}
+  m_SizeDelta: {x: 306.2, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1401205813
 MonoBehaviour:
@@ -982,7 +969,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: press 'R' to restart
+  m_text: press 'r' to restart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1009,15 +996,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 54
+  m_fontSizeBase: 54
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 1024
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1045,7 +1032,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -0.123291016, w: 0}
+  m_margin: {x: 0, y: 0, z: -418.86304, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1059,37 +1046,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401205811}
   m_CullTransparentMesh: 1
---- !u!1 &1418408807
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1418408808}
-  m_Layer: 0
-  m_Name: MissileSpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1418408808
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418408807}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: -2.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1552847078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,7 +1247,6 @@ GameObject:
   - component: {fileID: 1636222305}
   - component: {fileID: 1636222304}
   - component: {fileID: 1636222306}
-  - component: {fileID: 1636222307}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1308,7 +1263,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1636222303}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2550ed2afe6d1c540a7258309fd65c78, type: 3}
+  m_Script: {fileID: 11500000, guid: 99212b0cd01eacc45ab76d2afe48facf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _UseGameOver: 1
@@ -1436,50 +1391,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1636222307
-MonoBehaviour:
+--- !u!1 &1788428741
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636222303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6ec2c739012445439e36937d8824e3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swipeSensitivity: 1
-  pressLength: 10
-  Tap:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1276839793}
-        m_TargetAssemblyTypeName: PlayerController, EndlessJumperScripts
-        m_MethodName: TouchJump
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1172285165}
-        m_TargetAssemblyTypeName: GameManager, EndlessJumperScripts
-        m_MethodName: ResetGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  Swipe:
-    m_PersistentCalls:
-      m_Calls: []
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1788428742}
+  m_Layer: 0
+  m_Name: MissileSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1788428742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788428741}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12, y: -2.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1959562694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1671,10 +1613,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3739632483050012020, guid: 14e948bb023d59248bdb48d7304afc7c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -80.55
-      objectReference: {fileID: 0}
     - target: {fileID: 3739632483050012021, guid: 14e948bb023d59248bdb48d7304afc7c, type: 3}
       propertyPath: m_text
       value: press "up" key to jump
@@ -1695,10 +1633,6 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 3739632483050012021, guid: 14e948bb023d59248bdb48d7304afc7c, type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 1024
-      objectReference: {fileID: 0}
     - target: {fileID: 3739632483050012023, guid: 14e948bb023d59248bdb48d7304afc7c, type: 3}
       propertyPath: m_IsActive
       value: 1
