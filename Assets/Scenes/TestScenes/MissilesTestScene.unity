@@ -746,6 +746,7 @@ MonoBehaviour:
   maxYPosSpawn: 0
   missilePrefab: {fileID: 1815918567770103053, guid: 89e74172457efb64a8b32f11fabb8997, type: 3}
   missileSpawnPoint: {fileID: 364446733}
+  warningSignPrefab: {fileID: 5859521112941707718, guid: f71cfc1a2b6d48446bae57798989bec9, type: 3}
   difficultyChangeRate: 20
   timesBeforeSpawn:
   - 15
