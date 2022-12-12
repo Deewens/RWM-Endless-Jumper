@@ -8,7 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 93e5665de70b28f479f3583360a1b330
+<<<<<<< HEAD
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: f2a9fcec008f67b46bd0406c2d88fad5
+  - enabled: 1
+    path: Assets/Scenes/ChasingEnemyScene.unity
+    guid: 0f3db892c03f8124b86ffb454f479074
+=======
+>>>>>>> 0014093 (Mobile integration basics : RWMPA22-62)
   m_configObjects: {}

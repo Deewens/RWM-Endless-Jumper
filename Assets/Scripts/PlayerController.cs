@@ -81,6 +81,15 @@ public class PlayerController : MonoBehaviour
         _rb.velocity = Vector2.up * jumpForce;
     }
 
+    public void TouchJump()
+    {
+        if (!IsGrounded()) return;
+
+        jumpAudio.Play();
+        _rb.velocity = Vector2.up * jumpForce;
+        _verticalInput = false;
+    }
+
     private void OnMove(InputValue value)
     {
         Vector2 input = value.Get<Vector2>();
