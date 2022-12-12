@@ -235,11 +235,11 @@
       "url": "https://packages.unity.com"
     },
     "ie.itcarlow.endlevel-effects": {
-      "version": "https://github.com/Izabela-Zelek//EndLevel-Effects.git?path=/Packages/ie.itcarlow.endlevel-effects#v0.1.4",
+      "version": "https://github.com/Izabela-Zelek//EndLevel-Effects.git?path=/Packages/ie.itcarlow.endlevel-effects#v0.1.5",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "1c5bfdb134b1adab10757d23b83893d24fc30695"
+      "hash": "d4444c8bc2338624c68afca4941aa9f3f669b3eb"
     },
     "ie.itcarlow.tutorialsystem": {
       "version": "https://github.com/DawidJerdonek/RWM_P1.git?path=/Packages/ie.itcarlow.tutorialsystem#v0.2.2",
