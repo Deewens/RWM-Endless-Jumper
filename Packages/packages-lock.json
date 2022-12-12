@@ -234,6 +234,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "ie.setu.gesturemanager": {
+      "version": "https://github.com/CarolinePercy/P1-GestureManager.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "7e5374ae4d1e4626096b1b0c95d5081bc41f46b0"
+    },
     "ie.itcarlow.endlevel-effects": {
       "version": "https://github.com/Izabela-Zelek//EndLevel-Effects.git?path=/Packages/ie.itcarlow.endlevel-effects#v0.1.4",
       "depth": 0,

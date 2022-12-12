@@ -37,15 +37,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        scoreText.text = "score: " + score; 
+        scoreText.text = "score: " + score;
 
-        if(Time.timeScale == 0)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            replayText.gameObject.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.R))
-            { 
-                ResetGame(); 
-            }
+            ResetGame();
         }
     }
 
@@ -62,17 +58,22 @@ public class GameManager : MonoBehaviour
     
     public void ResetGame()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene("MainMenu");
-        _dieTime = Time.time;
+        if (Time.timeScale == 0)
+        {
+            replayText.gameObject.SetActive(true);
 
-        float storeTime = _dieTime - _startTime;
-        _dataManager.AddDeath();
-        _dataManager.UpdateHighestScore(score);
-        _dataManager.UpdateLongestTimePlayed(storeTime);
+            Time.timeScale = 1;
+            SceneManager.LoadScene("MainMenu");
+            _dieTime = Time.time;
 
-        score = 0;
+            float storeTime = _dieTime - _startTime;
+            _dataManager.AddDeath();
+            _dataManager.UpdateHighestScore(score);
+            _dataManager.UpdateLongestTimePlayed(storeTime);
 
+            score = 0;
+
+        }
     }
 
     public void DoubleScore()
