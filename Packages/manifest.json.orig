@@ -12,7 +12,11 @@
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.7.8",
     "ie.setu.gesturemanager": "https://github.com/CarolinePercy/P1-GestureManager.git",
+<<<<<<< HEAD
+    "ie.itcarlow.endlevel-effects": "https://github.com/Izabela-Zelek//EndLevel-Effects.git?path=/Packages/ie.itcarlow.endlevel-effects#v0.1.4",
+=======
     "ie.itcarlow.endlevel-effects": "https://github.com/Izabela-Zelek//EndLevel-Effects.git?path=/Packages/ie.itcarlow.endlevel-effects#v0.1.5",
+>>>>>>> feat-game-resize
     "ie.itcarlow.tutorialsystem": "https://github.com/DawidJerdonek/RWM_P1.git?path=/Packages/ie.itcarlow.tutorialsystem#v0.2.2",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
