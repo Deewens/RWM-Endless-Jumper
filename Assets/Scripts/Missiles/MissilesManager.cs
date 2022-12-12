@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,8 +9,8 @@ namespace Missiles
         [SerializeField] private float minTimeBeforeSpawn;
         [SerializeField] private float maxTimeBeforeSpawn;
 
-        [SerializeField] private float maxYPosSpawn;
-        [SerializeField] private float minYPosSpawn;
+        [SerializeField] private float minYPosSpawn = -1f;
+        [SerializeField] private float maxYPosSpawn = 1f;
         
         [SerializeField] private GameObject missilePrefab;
         [SerializeField] private Transform missileSpawnPoint;
@@ -28,7 +27,8 @@ namespace Missiles
                 float spawnHeight = Random.Range(minYPosSpawn, maxYPosSpawn);
                 Vector2 spawnPosition = new Vector2(missileSpawnPoint.position.x, spawnHeight);
                 
-                GameObject spawnedMissile = Instantiate(missilePrefab, spawnPosition, Quaternion.identity);
+                // Instantiate missile with a random height
+                var spawnedMissile = Instantiate(missilePrefab, spawnPosition, Quaternion.identity);
                 spawnedMissile.transform.SetParent(missileSpawnPoint);
 
                 float timeBeforeSpawn = Random.Range(minTimeBeforeSpawn, maxTimeBeforeSpawn);

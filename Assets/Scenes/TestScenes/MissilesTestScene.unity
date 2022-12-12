@@ -299,7 +299,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364446732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: -2.05, z: 0}
+  m_LocalPosition: {x: 12, y: -2.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -557,8 +557,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'score: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c8d477d1960492d44b4a305fe54a7544, type: 2}
-  m_sharedMaterial: {fileID: -8405700358053112251, guid: c8d477d1960492d44b4a305fe54a7544, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -744,8 +744,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minTimeBeforeSpawn: 5
   maxTimeBeforeSpawn: 10
-  maxYPosSpawn: 1
-  minYPosSpawn: -1
+  minYPosSpawn: -2.75
+  maxYPosSpawn: 0
   missilePrefab: {fileID: 1815918567770103053, guid: 89e74172457efb64a8b32f11fabb8997, type: 3}
   missileSpawnPoint: {fileID: 364446733}
 --- !u!1001 &1276839792
@@ -880,8 +880,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: press 'r' to restart
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c8d477d1960492d44b4a305fe54a7544, type: 2}
-  m_sharedMaterial: {fileID: -8405700358053112251, guid: c8d477d1960492d44b4a305fe54a7544, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1174,20 +1174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ec5a136720ce0489730b18895bc680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _UseGameOver: 1
-  _playerName: Player 1
-  _canvasPrefab: {fileID: 6342126261381459562, guid: 628babdbfe81e4e4387ec3b7acf67316, type: 3}
-  _gameOverText: game over
-  _EndScreenText: {fileID: 2768518502444809257, guid: 0c600bf2b9f5eb44da1c43315823cd33, type: 3}
-  _GameOverColour:
-    serializedVersion: 2
-    rgba: 4279374538
-  _useScoreCountUp: 1
-  _scoreGameObject: {fileID: 911875294}
-  _scoreText: 'score : '
-  _ScoreColour:
-    serializedVersion: 2
-    rgba: 4291019715
 --- !u!4 &1636222305
 Transform:
   m_ObjectHideFlags: 0
