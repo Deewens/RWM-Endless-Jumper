@@ -742,12 +742,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0377aa1709940968d69b497856bb7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTimeBeforeSpawn: 5
-  maxTimeBeforeSpawn: 10
   minYPosSpawn: -2.75
   maxYPosSpawn: 0
   missilePrefab: {fileID: 1815918567770103053, guid: 89e74172457efb64a8b32f11fabb8997, type: 3}
   missileSpawnPoint: {fileID: 364446733}
+  difficultyChangeRate: 20
+  timesBeforeSpawn:
+  - 15
+  - 10
+  - 5
+  - 2.5
 --- !u!1001 &1276839792
 PrefabInstance:
   m_ObjectHideFlags: 0
