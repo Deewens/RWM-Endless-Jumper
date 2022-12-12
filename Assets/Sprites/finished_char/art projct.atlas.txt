@@ -1,0 +1,43 @@
+art projct.png
+size:998,433
+filter:Linear,Linear
+pma:true
+calf back
+bounds:835,6,80,216
+offsets:1,2,82,219
+calf front
+bounds:917,7,79,215
+offsets:1,2,82,219
+elbow back
+bounds:822,224,82,207
+offsets:2,1,85,210
+elbow front
+bounds:906,224,82,207
+offsets:2,1,85,210
+foot back
+bounds:2,7,135,65
+offsets:1,2,138,70
+foot front
+bounds:139,7,135,65
+offsets:1,2,138,70
+head
+bounds:365,43,149,180
+offsets:1,1,213,183
+rotate:90
+shoulder back
+bounds:547,2,94,190
+offsets:2,127,294,323
+shoulder front
+bounds:643,3,89,190
+offsets:4,2,182,198
+rotate:90
+thigh bcak
+bounds:2,74,361,357
+offsets:2,3,365,363
+thigh front
+bounds:696,94,124,337
+offsets:2,3,130,344
+torso
+bounds:365,194,237,329
+offsets:1,2,240,332
+rotate:90
